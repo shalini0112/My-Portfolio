@@ -3,57 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Shalini Kumari's Portfolio</title>
+    <!-- Tailwind CSS for modern, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevents horizontal scroll from animations */
+            background: linear-gradient(135deg, #e0eafc, #cfdef3); /* A subtle blue gradient background */
+        }
+        /* Custom styles for an attractive look */
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out;
+        }
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+        .nav-link {
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #4361ee;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+        .card {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        .btn-primary {
+            background-color: #4361ee;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #3a57e3;
+        }
+        /* Fade-in animation for sections */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .social-icon {
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #4361ee;
+        }
+    </style>
+    <!-- Add Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-    <header>
-        <h1>Shalini Kumari</h1>
-        <p>Full Stack Developer & DevOps Enthusiast</p>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header and Navigation -->
+    <header class="bg-white py-6 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+            <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                <!-- Fallback image URL is used here, replace with a valid URL or local file -->
+                <img src="shalini_passport_size.png" alt="Shalini Kumari's Profile Picture" class="profile-pic">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Shalini Kumari</h1>
+                    <p class="text-gray-500">Full Stack Development Enthusiast</p>
+                </div>
+            </div>
+            <nav class="space-x-4">
+                <a href="#summary" class="text-gray-600 font-semibold nav-link">Summary</a>
+                <a href="#education" class="text-gray-600 font-semibold nav-link">Education</a>
+                <a href="#experience" class="text-gray-600 font-semibold nav-link">Experience</a>
+                <a href="#projects" class="text-gray-600 font-semibold nav-link">Projects</a>
+                <a href="#technologies" class="text-gray-600 font-semibold nav-link">Technologies</a>
+                <a href="#contact" class="text-gray-600 font-semibold nav-link">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Welcome! I'm a computer science student specializing in full-stack development and DevOps.</p>
-    </section>
+    <main class="container mx-auto p-4 md:p-8 space-y-16">
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>C</li>
-            <li>Java</li>
-            <li>MySQL</li>
-            <li>Python</li>
-            <li>Frontend</li>
-        </ul>
-    </section>
+        <!-- Summary Section -->
+        <section id="summary" class="bg-white p-10 rounded-xl card fade-in">
+            <h2 class="text-3xl font-bold mb-4 border-b pb-2 text-indigo-600">Summary</h2>
+            <p class="text-gray-700 leading-relaxed">Full Stack Development enthusiast currently pursuing a B.Tech in Computer Science and Engineering at Dehradun Institute of Technology. Skilled in front-end and back-end development, with hands-on experience building responsive applications using React.js, Tailwind CSS, Node.js, FastAPI, and Django. Proficient in Python, Java, and JavaScript, with a strong foundation in software engineering principles and databases. Passionate about creating scalable, user-centric software solutions and eager to thrive in collaborative, tech-driven environments.</p>
+        </section>
 
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="project">
-            <h3>My Portfolio</h3>
-            <p>The "My Portfolio" project is a personal website designed to showcase my skills and  projects in a professional and visually appealing way. Built with basic HTML and CSS, this project demonstrates my ability to create responsive and structured web pages. It serves as  providing an easy way for potential collaborators or employers to reach out to me.</p>
-        </div>
-    </section>
+        <!-- Education Section -->
+        <section id="education" class="bg-white p-10 rounded-xl card fade-in">
+            <h2 class="text-3xl font-bold mb-4 border-b pb-2 text-indigo-600">Education</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900">B.Tech in Computer Science and Engineering</h3>
+                    <p class="text-gray-600">Dehradun Institute of Technology, 2022-2026</p>
+                    <p class="text-sm text-gray-500">Specialization: Full Stack Development</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900">XII (CBSE)</h3>
+                    <p class="text-gray-600">A.S. Krishna Niketan, Patna, 2020-2022</p>
+                    <p class="text-sm text-gray-500">Percentage: 82.4%</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience" class="bg-white p-10 rounded-xl card fade-in">
+            <h2 class="text-3xl font-bold mb-4 border-b pb-2 text-indigo-600">Experience</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900">Salesforce Virtual Intern</h3>
+                    <p class="text-gray-600">SmartBridge (in collaboration with Salesforce & AICTE) | Jun 2025 - Jul 2025</p>
+                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                        <li>Completed a Salesforce-supported virtual internship focused on CRM, Flow Builder, and AI-powered cloud automation.</li>
+                        <li>Developed and deployed mini-projects using Salesforce Flow, Apex, and Lightning Web Components (LWC).</li>
+                        <li>Explored Al integration with Prompt Builder and Sales Cloud, gaining real-world business scenario experience.</li>
+                        <li>Earned 79+ Trailhead badges, showcasing proficiency in Salesforce modules and hands-on platform usage.</li>
+                        <li>Built real-time solutions using Salesforce CRM to automate workflows and enhance customer relationship management.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Send</button>
-        </form>
-    </section>
+        <!-- Projects Section -->
+        <section id="projects" class="bg-white p-10 rounded-xl card fade-in">
+            <h2 class="text-3xl font-bold mb-4 border-b pb-2 text-indigo-600">Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1: News Website App -->
+                <div class="bg-gray-100 p-8 rounded-xl card">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">News Website App</h3>
+                    <p class="text-gray-700 mb-4">Developed a fully responsive news web application using HTML, Bootstrap, and JavaScript ES6. Integrated a Web API to fetch and dynamically render real-time news headlines and articles. Applied async/await, Promises, and DOM manipulation for asynchronous operations and content updates.</p>
+                    <a href="https://github.com/shalini0112/news-app-js" target="_blank" class="text-blue-600 hover:underline flex items-center space-x-2">
+                        <span>View on GitHub</span>
+                        <!-- GitHub Icon -->
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Project Card 2: To-Do List App -->
+                <div class="bg-gray-100 p-8 rounded-xl card">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">To-Do List App</h3>
+                    <p class="text-gray-700 mb-4">Built a task management system using JavaScript, HTML, and CSS for responsive layout and interaction. Implemented features for task creation, deletion, and status tracking with intuitive UI. Leveraged DOM manipulation and event handling for real-time interactivity.</p>
+                    <a href="https://github.com/shalinikumari12/todo-list-app" target="_blank" class="text-blue-600 hover:underline flex items-center space-x-2">
+                        <span>View on GitHub</span>
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Project Card 3: Weather Dashboard -->
+                <div class="bg-gray-100 p-8 rounded-xl card">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Weather Dashboard</h3>
+                    <p class="text-gray-700 mb-4">Engineered a weather dashboard using HTML, CSS, and JavaScript, featuring responsive and adaptive UI. Used OpenWeatherMap API to retrieve and display live weather data for over 200,000 cities worldwide. Optimized DOM rendering to improve UI responsiveness by 60%.</p>
+                    <a href="https://github.com/shalini0112/Weather-Dashboard" target="_blank" class="text-blue-600 hover:underline flex items-center space-x-2">
+                        <span>View on GitHub</span>
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Project Card 4: This Portfolio Website -->
+                <div class="bg-gray-100 p-8 rounded-xl card">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Portfolio Website</h3>
+                    <p class="text-gray-700 mb-4">Designed and developed a personal portfolio website using HTML5, Tailwind CSS for responsive design, and JavaScript for interactive animations. This project showcases proficiency in modern web development practices and front-end styling.</p>
+                    <a href="https://github.com/shalini0112/My-Portfolio" target="_blank" class="text-blue-600 hover:underline flex items-center space-x-2">
+                        <span>View on GitHub</span>
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <p>&copy; 2024 Shalini Kumari</p>
+        <!-- Technologies Section -->
+        <section id="technologies" class="bg-white p-10 rounded-xl card fade-in">
+            <h2 class="text-3xl font-bold mb-4 border-b pb-2 text-indigo-600">Technologies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Languages</h3>
+                    <p class="text-gray-700">Python, Java, JavaScript (ES6+), HTML5, CSS3</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Frontend</h3>
+                    <p class="text-gray-700">React.js, Bootstrap, Tailwind CSS, Lightning Web Components (LWC)</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Backend</h3>
+                    <p class="text-gray-700">Node.js, Django, FastAPI, Spring Boot, Apex (Salesforce)</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Dev Tools & Platforms</h3>
+                    <p class="text-gray-700">Git, GitHub, VS Code, IntelliJ, Eclipse, Vercel, Trailhead, Prompt Builder</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white p-10 rounded-xl card fade-in">
+            <h2 class="text-3xl font-bold mb-4 border-b pb-2 text-indigo-600">Contact</h2>
+            <div class="space-y-4 text-gray-700">
+                <p class="flex items-center space-x-3">
+                    <i class="fas fa-envelope text-indigo-600"></i>
+                    <span>Email: <a href="mailto:shalini18730@gmail.com" class="text-blue-600 hover:underline">shalini18730@gmail.com</a></span>
+                </p>
+                <p class="flex items-center space-x-3">
+                    <i class="fas fa-phone-alt text-indigo-600"></i>
+                    <span>Phone: +91 6299340524</span>
+                </p>
+                <p class="flex items-center space-x-3">
+                    <i class="fab fa-linkedin text-indigo-600"></i>
+                    <span>LinkedIn: <a href="https://www.linkedin.com/in/shalini-kumari-0112/" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/shalini-kumari-0112/</a></span>
+                </p>
+                <p class="flex items-center space-x-3">
+                    <i class="fab fa-github text-indigo-600"></i>
+                    <span>GitHub: <a href="https://github.com/shalini0112" target="_blank" class="text-blue-600 hover:underline">github.com/shalini0112</a></span>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2025 Shalini Kumari. All rights reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript to add the fade-in class when a section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is in view
+        });
+
+        document.querySelectorAll('.fade-in').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
