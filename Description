@@ -1,6 +1,21 @@
-/*
+Shalini Kumari's Personal Portfolio
 
+A clean, modern, and responsive personal portfolio website showcasing my skills, projects, and professional experience. This portfolio is built to be a single-page application, demonstrating a solid understanding of front-end development and modern web design principles.
 
+Key Features:
 
+Fully Responsive Design: The layout adapts seamlessly to different screen sizes, from mobile phones to large desktops, ensuring a consistent user experience.
 
-*/
+Interactive UI/UX: The website includes subtle CSS animations and hover effects on elements like project cards and social icons, making the experience dynamic and engaging.
+
+Animated Content: Sections fade in as the user scrolls, creating a smooth and professional presentation of the content.
+
+Single-Page Application (SPA) feel: The navigation links smoothly scroll to the relevant sections of the page without a full page reload.
+
+Technologies Used:
+
+HTML5: For the foundational structure and semantic layout of the website.
+
+Tailwind CSS: A utility-first CSS framework for rapid and responsive styling. It enables a clean, customizable, and maintainable design without writing a lot of custom CSS.
+
+JavaScript (ES6): Used for creating the dynamic scroll-based fade-in animations and other interactive elements.
